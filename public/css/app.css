@@ -1,0 +1,68 @@
+#ground {
+  background: #4CAF50;
+  width: 100%;
+  height: 30vh;
+  position: relative; }
+  #ground .obstacle-container {
+    display: inline-block;
+    position: absolute;
+    background: #3E2723; }
+
+#me {
+  background: blue;
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  top: calc(70vh - 100px);
+  left: calc(50vw - 100px/2); }
+
+.cloud {
+  width: 600px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .cloud * {
+    position: absolute;
+    border-radius: 50%;
+    background: white; }
+  .cloud .cloud-1 {
+    width: calc(.2 * 450px);
+    height: calc(.2 * 450px);
+    left: 3%; }
+  .cloud .cloud-2 {
+    width: calc(.4 * 450px);
+    height: calc(.4 * 450px);
+    left: 10%;
+    bottom: 32%; }
+  .cloud .cloud-3 {
+    width: calc(.7 * 450px);
+    height: calc(.7 * 450px);
+    bottom: 26%;
+    left: 22%; }
+  .cloud .cloud-4 {
+    width: calc(.4 * 450px);
+    height: calc(.4 * 450px);
+    right: 8%; }
+  .cloud .cloud-5 {
+    width: calc(.3 * 450px);
+    height: calc(.3 * 450px);
+    right: 0%;
+    bottom: 39%; }
+
+#sky {
+  height: 70vh;
+  width: 100%;
+  background: #039BE5;
+  display: flex; }
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  height: 20000px; }
+
+.canvas {
+  width: 20000px;
+  height: 5000px;
+  position: fixed; }

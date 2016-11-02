@@ -1,0 +1,108 @@
+<body>
+<div id="stage">
+    <div id="sky">
+    	<div class="cloud-container">
+    		<div class="cloud"></div>
+    		<div class="cloud"></div>
+    	</div>
+<!--     	<div class="cloud-container"></div>
+    	<div class="cloud-container"></div>
+    	<div class="cloud-container"></div>
+    	<div class="cloud-container"></div> -->
+    </div>
+    <div id="trees-container">
+    </div>
+    <div id="ground">
+    </div>
+    <div id="ground-side"></div>
+</div>
+</body>
+<style type="text/css">
+body{
+	min-width: 20000px;
+    min-height: 20000px;
+}
+#stage {
+    min-width: 20000px;
+    min-height: 100vh;
+    height: 100vh;
+    perspective: 5000px;
+    position: fixed;
+}
+
+#sky {
+    width: 100%;
+    height: 70%;
+    background-color: blue;
+}
+
+#trees-container{
+	height: 30%;
+	width: 100%;
+	position: absolute;
+	bottom: 30%;
+}
+
+.trees{
+	background: brown;
+	width: 30px;
+	height: 100px;
+}
+.cloud-container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	float: left;
+}
+.cloud{
+	background-color: white;
+	width: 100px;
+	height: 40px;
+	position: absolute;
+}
+#ground {
+    width: 100%;
+    min-height: 1000px;
+    position: absolute;
+    transform-origin: top;
+    background-color: #078e07;
+    transform: rotate3d(1, 0, 0, -90deg);
+}
+
+#ground-side {
+    height: 30%;
+    width: 100%;
+    background-color: green;
+}
+</style>
+<script type="text/javascript">
+	function createClound(n,parent) {
+		var z = [0, -1300, -3500, -1800, -2300, -4500,0,0];
+		var x = [900, 1150,2200, 3250,1300,1350];
+		var y = [150,300,400,500];
+
+		for (var i = 0; i < n; i++) {
+			let c = document.createElement('div');
+			let p_z = z[Math.floor(Math.random(1)*z.length)] + "px";
+
+			//x origin is top left corner
+			let p_x = x[Math.floor(Math.random(1)*x.length)] + "px";
+			let p_y = y[Math.floor(Math.random(1)*y.length)] + "px";
+			
+			c.className = "cloud";
+			c.style.transform = "translate3d(" + p_x + "," + p_y + "," + p_z + ")"
+			parent.appendChild(c);
+		}
+	}
+
+	// Array.from(document.querySelectorAll(".cloud-container")).forEach(function(container){
+	// 	createClound(60,container);
+	// })
+
+	document.body.onscroll = function(){
+		var x = document.body.scrollTop;
+		console.log(x);
+		document.querySelector("#stage").style.left = x * - 1 + "px"
+	}
+</script>
