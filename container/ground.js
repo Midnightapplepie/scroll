@@ -11,7 +11,7 @@ class Ground extends Component{
 			var key = `obstacle-${i}`;
 			x+= _.sample(distances);
 
-			return <Obstacles left={x + "px"} />
+			return <Obstacles left={x + "px"} key={key}/>
 		})
 	}
 

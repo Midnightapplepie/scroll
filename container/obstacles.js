@@ -17,7 +17,7 @@ class Obstacles extends Component{
 		return(
 			<div className="obstacle-container" 
 				 style={top}>
-				<div class="base" style={size}></div>
+				<div className="base" style={size}></div>
 			</div>
 		);
 	}
